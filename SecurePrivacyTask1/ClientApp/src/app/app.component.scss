@@ -1,0 +1,55 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  margin-bottom: 20px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+
+    li {
+      display: inline-block;
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #0056b3;
+        }
+
+        &.active-link {
+          color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}

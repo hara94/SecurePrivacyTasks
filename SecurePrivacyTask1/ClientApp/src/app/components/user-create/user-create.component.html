@@ -1,0 +1,27 @@
+<div class="user-create-container">
+  <h2>Create User</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="userName">Username</label>
+    <input id="userName" [(ngModel)]="user.userName" name="userName" type="text" required />
+
+    <label for="email">Email</label>
+    <input id="email" [(ngModel)]="user.email" name="email" type="email" required />
+
+    <label for="phone">Phone</label>
+    <input id="phone" [(ngModel)]="user.phone" name="phone" type="text" required />
+
+    <label for="address">Address</label>
+    <input id="address" [(ngModel)]="user.address" name="address" type="text" required />
+
+    <label for="city">City</label>
+    <input id="city" [(ngModel)]="user.city" name="city" type="text" required />
+
+    <label for="consent">
+      <input id="consent" type="checkbox" [(ngModel)]="user.consentGiven" name="consentGiven" required />
+      I consent to the storage of my personal data
+    </label>
+
+    <button type="submit" class="submit-btn">Create User</button>
+  </form>
+</div>

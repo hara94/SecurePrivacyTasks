@@ -1,0 +1,6 @@
+@SecurePrivacyTask1_HostAddress = http://localhost:5274
+
+GET {{SecurePrivacyTask1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

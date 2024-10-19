@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SpaRoot>ClientApp/</SpaRoot>
+		<SpaStaticAssets>true</SpaStaticAssets>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="ClientApp\**" />
+	  <Content Remove="ClientApp\**" />
+	  <EmbeddedResource Remove="ClientApp\**" />
+	  <None Remove="ClientApp\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.10" />
+		<PackageReference Include="MongoDB.Driver" Version="3.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Services\" />
+	</ItemGroup>
+
+</Project>

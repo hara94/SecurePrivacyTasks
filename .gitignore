@@ -1,0 +1,83 @@
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.vs/
+*.swp
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+
+# Packages
+*.nupkg
+# NuGet packages directory can be restored by the package manager
+packages/
+
+# Auto-generated files
+*.generated.cs
+*.designer.cs
+*.g.cs
+*.g.i.cs
+*.sln.docstates
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish Web Outputs
+wwwroot/
+publish/
+app.publish/
+
+# Debug/Release configurations
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Test.json
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+
+# Rider settings directory
+/.idea/
+
+# MacOS files
+.DS_Store
+
+# Optional: Node.js build artifacts, if applicable
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Optional: .NET Core-generated files
+project.lock.json
+project.fragment.lock.json
+global.json
+
+# Optional: Visual Studio Code settings
+.vscode/
+
+# Optional: Visual Studio for Mac
+.vscode/
+
+# Optional: JetBrains Rider settings
+.idea/
+
+# Azure Pipelines
+.terraform/

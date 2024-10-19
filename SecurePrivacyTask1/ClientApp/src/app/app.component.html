@@ -1,0 +1,20 @@
+<div class="app-container">
+  <header>
+    <h1>{{ title }}</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active-link">List Users</a></li>
+        <li><a routerLink="/create" routerLinkActive="active-link">Create User</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 User Management App - Secure Privacy</p>
+  </footer>
+</div>
+
