@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryStringParser", "BinaryStringParser\BinaryStringParser.csproj", "{40DA746E-E57C-470D-A78A-2B7EEE3FD6F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryParserTests", "BinaryParserTests\BinaryParserTests.csproj", "{718C88CB-5498-437B-94A3-134B76610D49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40DA746E-E57C-470D-A78A-2B7EEE3FD6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DA746E-E57C-470D-A78A-2B7EEE3FD6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DA746E-E57C-470D-A78A-2B7EEE3FD6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DA746E-E57C-470D-A78A-2B7EEE3FD6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718C88CB-5498-437B-94A3-134B76610D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718C88CB-5498-437B-94A3-134B76610D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718C88CB-5498-437B-94A3-134B76610D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718C88CB-5498-437B-94A3-134B76610D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF2021BE-0E3A-4D65-87DD-3123F726D3AA}
+	EndGlobalSection
+EndGlobal
