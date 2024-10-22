@@ -1,6 +1,6 @@
 # SecurePrivacyTasks
 
-**SecurePrivacyTasks** is a user management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
+**Task 1** is a user management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
 
 ## Table of Contents
 
@@ -105,3 +105,65 @@ The core of the application revolves around creating, updating, and deleting use
 - **BCrypt**: Password hashing to ensure security.
 - **Cookie-based Authentication**: For managing sessions securely.
 - **NGX-Toastr**: For displaying notifications.
+
+
+# SecurePrivacyTasks - Task 2: Binary String Analysis
+
+This directory contains the solution for Task 2 of the SecurePrivacy coding challenge. 
+
+## Task 2: Binary String Analysis Function
+
+### Objective:
+Write a C# function to evaluate binary strings based on specific criteria.
+
+### Functionality:
+The function evaluates whether a binary string is "good" based on these conditions:
+1. The binary string must have an equal number of 0's and 1's.
+2. For every prefix of the binary string, the number of 1's should never be less than the number of 0's.
+
+### Steps to Run:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/hara94/SecurePrivacyTasks.git
+```
+
+2. Navigate to the `SecurePrivacyTask2/BinaryStringParser` directory.
+
+3. Open the solution in Visual Studio or another C# development environment.
+
+4. Build the project using `dotnet build`.
+
+5. Run the program using `dotnet run`. You will be prompted to enter binary strings separated by commas for evaluation.
+
+### Example:
+
+```bash
+Enter binary strings separated by commas:
+1100, 1010, 11100011
+
+Output:
+Binary String: 1100 is Good
+Binary String: 1010 is Good
+Binary String: 11100011 is Not Good
+```
+
+### Testing:
+
+The solution includes NUnit tests to validate the functionality. To run the tests:
+
+1. Navigate to the `BinaryStringParserTests` project.
+2. Run the tests using the following command:
+
+```bash
+dotnet test
+```
+
+### Input Validation:
+
+The program includes input validation to ensure that only valid binary strings (containing only '0's and '1's) are processed.
+
+### License:
+
+This project is licensed under the MIT License.
