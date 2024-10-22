@@ -5,7 +5,7 @@
 - [Task 2: Binary String Analysis](#secureprivacytasks---task-2-binary-string-analysis)
 
 
-# Task 1** is a user management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
+# Task 1 - User management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
  
 ## Table of Contents
 
