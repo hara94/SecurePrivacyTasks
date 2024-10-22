@@ -1,7 +1,12 @@
 # SecurePrivacyTasks
 
-**Task 1** is a user management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
+** Table of Contents
+- [Task 1: User Management Application with GDPR Considerations](#task-1-user-management-application-with-gdpr-considerations)
+- [Task 2: Binary String Analysis](#secureprivacytasks---task-2-binary-string-analysis)
 
+
+# Task 1** is a user management application demonstrating key CRUD functionalities while incorporating critical GDPR considerations, such as cookie consent, data access rights, and secure authentication.
+ 
 ## Table of Contents
 
 - [Overview](#overview)
@@ -108,6 +113,15 @@ The core of the application revolves around creating, updating, and deleting use
 
 
 # SecurePrivacyTasks - Task 2: Binary String Analysis
+
+## Table of Contents
+- [Objective](#objective)
+- [Functionality](#functionality)
+- [Steps to Run](#steps-to-run)
+- [Example](#example)
+- [Testing](#testing)
+- [Input Validation](#input-validation)
+- [License](#license)
 
 This directory contains the solution for Task 2 of the SecurePrivacy coding challenge. 
 
