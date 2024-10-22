@@ -83,7 +83,7 @@ The core of the application revolves around creating, updating, and deleting use
 
 2. Install dependencies for the Angular frontend:
    ```bash
-   cd ClientApp
+   cd .\SecurePrivacyTask1\ClientApp\
    npm install
   
 3. Run the backend (.NET):
