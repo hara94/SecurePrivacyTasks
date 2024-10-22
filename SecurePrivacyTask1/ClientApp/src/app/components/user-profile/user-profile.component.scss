@@ -1,0 +1,74 @@
+.user-profile-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    strong {
+      font-weight: 600;
+      color: #555;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #45a049;
+    }
+
+    &:first-of-type {
+      background-color: #2196f3; /* Request Data button - Blue */
+    }
+
+    &:first-of-type:hover {
+      background-color: #1976d2;
+    }
+
+    &:last-of-type {
+      background-color: #ff5722; /* Download Data button - Red */
+    }
+
+    &:last-of-type:hover {
+      background-color: #e64a19;
+    }
+  }
+
+  h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #444;
+  }
+
+  pre {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow-x: auto;
+    font-size: 14px;
+    color: #555;
+  }
+}

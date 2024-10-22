@@ -11,13 +11,15 @@ import { UserService } from './app/services/user.service';  // Make sure UserSer
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { importProvidersFrom } from '@angular/core'; // Required for standalone
+import { authReducer } from './app/store/auth.reducer';
+import { AuthEffects } from './app/store/auth.effects';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),  // Make sure HttpClient is provided
     provideRouter(routes),
-    provideStore({ users: userReducer }),
-    provideEffects(UserEffects),
+    provideStore({ users: userReducer, auth: authReducer }),
+    provideEffects(UserEffects, AuthEffects),
     UserService,  
     importProvidersFrom(BrowserAnimationsModule),  
     importProvidersFrom(ToastrModule.forRoot())  

@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="credentials.userName" name="userName" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="credentials.password" name="password" required />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Display loading or error message if needed -->
+  <p *ngIf="login$ | async as response">
+    {{ response.message }}
+  </p>
+</div>

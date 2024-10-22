@@ -1,0 +1,9 @@
+<!-- Show the banner only if consent hasn't been given -->
+<div *ngIf="!hasConsented()" class="cookie-banner">
+  <p>
+    This site uses cookies to enhance your experience. Do you accept?
+    <a routerLink="/privacy-policy" routerLinkActive="active-link">Read More</a>
+  </p>
+  <button (click)="acceptCookies()">Accept</button>
+  <button (click)="declineCookies()">Decline</button>
+</div>

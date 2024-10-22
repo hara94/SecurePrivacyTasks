@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace SecurePrivacyTask1.Repository
 {
@@ -10,6 +9,8 @@ namespace SecurePrivacyTask1.Repository
         Task AddAsync(TDocument document);
         Task UpdateAsync(string id, TDocument document);
         Task DeleteAsync(string id);
-        Task<bool> IsUserNameUniqueAsync(string userName);
+        Task<bool> UserExists(string username);
+        Task<TDocument> GetByUsernameAsync(string userName);
+        Task<IEnumerable<TDocument>> FindAsync(Expression<Func<TDocument, bool>> filterExpression);
     }
 }

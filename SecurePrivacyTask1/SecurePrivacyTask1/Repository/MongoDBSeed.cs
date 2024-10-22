@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using SecurePrivacyTask1.Models;
 
 public class MongoDBSeed
@@ -17,11 +18,48 @@ public class MongoDBSeed
 
         if (usersCount == 0)
         {
+            // Generate ObjectIds for users
+            var user1Id = ObjectId.GenerateNewId();
+            var user2Id = ObjectId.GenerateNewId();
+
             // Seed initial data if collection is empty
             var initialUsers = new List<User>
             {
-                new("john_doe", "password123", "john@example.com", "123456789", "123 Main St", "New York"),
-                new("jane_smith", "password456", "jane@example.com", "987654321", "456 Oak St", "San Francisco")
+                // First user
+                new User
+                {
+                    Id = user1Id.ToString(),
+                    UserName = "john_doe",
+                    PasswordHash = "$2a$11$n6BsGi1.Hs8a6HfIEhxz6.wYE89RDc4P1NinAHIhxr3s7czPwuWrC", // Example hashed password
+                    Email = "john@example.com",
+                    Phone = "123456789",
+                    Address = "123 Main St",
+                    City = "New York",
+                    ConsentGiven = true,
+                    CanCreateUsers = true,
+                    CanDeleteUsers = true,
+                    CanEditUsers = true,
+                    CreatedAt = DateTime.UtcNow,
+                    CreatedByUserId = null  // The first user is created by the system
+                },
+
+                // Second user created by the first user
+                new User
+                {
+                    Id = user2Id.ToString(),
+                    UserName = "jane_smith",
+                    PasswordHash = "$2a$11$n6BsGi1.Hs8a6HfIEhxz6.wYE89RDc4P1NinAHIhxr3s7czPwuWrC", // Example hashed password
+                    Email = "jane@example.com",
+                    Phone = "987654321",
+                    Address = "456 Oak St",
+                    City = "San Francisco",
+                    ConsentGiven = true,
+                    CanCreateUsers = true,
+                    CanDeleteUsers = true,
+                    CanEditUsers = true,
+                    CreatedAt = DateTime.UtcNow,
+                    CreatedByUserId = user1Id.ToString()  // Created by the first user
+                }
             };
 
             await _usersCollection.InsertManyAsync(initialUsers);

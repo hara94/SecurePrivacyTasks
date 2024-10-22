@@ -1,0 +1,20 @@
+<div class="user-profile-container">
+  <h2>Your Profile</h2>
+
+  <!-- Display user data if available -->
+  <p *ngIf="userData"><strong>Username:</strong> {{ userData.userName }}</p>
+  <p *ngIf="userData"><strong>Email:</strong> {{ userData.email }}</p>
+  <p *ngIf="userData"><strong>Phone:</strong> {{ userData.phone }}</p>
+  <p *ngIf="userData"><strong>Address:</strong> {{ userData.address }}, {{ userData.city }}</p>
+
+  <!-- Button to request personal data -->
+  <button (click)="requestMyData()">Access My Data</button>
+
+  <!-- Display user data after request -->
+  <div *ngIf="userData">
+    <h3>Your Personal Data</h3>
+    <pre>{{ userData | json }}</pre>
+  </div>
+
+  <button (click)="downloadMyData()">Download My Data</button>
+</div>

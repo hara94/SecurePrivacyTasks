@@ -8,6 +8,19 @@
         <p>Email: {{ user.email }}</p>
         <p>Phone: {{ user.phone }}</p>
         <p>Address: {{ user.address }}, {{ user.city }}</p>
+
+        <!-- Show Delete button only if the current user has permission to delete -->
+        <button *ngIf="currentUser?.canDeleteUsers && user.id"
+                class="delete-button"
+                (click)="onDeleteUser(user.id)">
+          Delete
+        </button>
+
+        <!-- Update button navigates to edit-user/:id -->
+        <button class="update-button"
+                (click)="onUpdateUser(user)">
+          Update
+        </button>
       </li>
     </ul>
   </div>

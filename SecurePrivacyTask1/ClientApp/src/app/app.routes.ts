@@ -1,10 +1,27 @@
 import { Routes } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CookieManagementComponent } from './components/cookie-management/cookie-management.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
-// Define the routes for the application
 export const routes: Routes = [
-  { path: '', component: UserListComponent },  // Default route to list users
-  { path: 'create', component: UserCreateComponent },  // Route to create a user
-  { path: '**', redirectTo: '' }  // Wildcard route to redirect any unknown paths to the user list
+  // Public routes
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'cookie-management', component: CookieManagementComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+
+  // Protected routes
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'create', component: UserCreateComponent, canActivate: [AuthGuard] },
+  { path: 'edit-user/:id', component: UserCreateComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
+
+  // Default and fallback routes
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' }
 ];

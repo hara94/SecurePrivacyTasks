@@ -1,5 +1,7 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace SecurePrivacyTask1.Repository
@@ -20,7 +22,12 @@ namespace SecurePrivacyTask1.Repository
 
         public async Task<TDocument> GetByIdAsync(string id)
         {
-            var filter = Builders<TDocument>.Filter.Eq("_id", id);
+            if (!ObjectId.TryParse(id, out ObjectId objectId))
+            {
+                throw new ArgumentException("Invalid id format");
+            }
+
+            var filter = Builders<TDocument>.Filter.Eq("_id", objectId);
             return await _collection.Find(filter).FirstOrDefaultAsync();
         }
 
@@ -31,20 +38,37 @@ namespace SecurePrivacyTask1.Repository
 
         public async Task UpdateAsync(string id, TDocument document)
         {
-            var filter = Builders<TDocument>.Filter.Eq("_id", id);
+            if (!ObjectId.TryParse(id, out ObjectId objectId))
+            {
+                throw new ArgumentException("Invalid id format");
+            }
+
+            var filter = Builders<TDocument>.Filter.Eq("_id", objectId);
             await _collection.ReplaceOneAsync(filter, document);
         }
 
         public async Task DeleteAsync(string id)
         {
-            var filter = Builders<TDocument>.Filter.Eq("_id", id);
+            var objectId = new ObjectId(id);
+            var filter = Builders<TDocument>.Filter.Eq("_id", objectId);
             await _collection.DeleteOneAsync(filter);
         }
 
-        public async Task<bool> IsUserNameUniqueAsync(string userName)
+        public async Task<bool> UserExists(string userName)
         {
             var filter = Builders<TDocument>.Filter.Eq("UserName", userName);
-            return await _collection.Find(filter).AnyAsync() == false; // Returns true if no match found
+            return await _collection.Find(filter).AnyAsync();
+        }
+
+        public async Task<TDocument> GetByUsernameAsync(string userName)
+        {
+            var filter = Builders<TDocument>.Filter.Eq("UserName", userName);
+            return await _collection.Find(filter).FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<TDocument>> FindAsync(Expression<Func<TDocument, bool>> filterExpression)
+        {
+            return await _collection.Find(filterExpression).ToListAsync();
         }
     }
 }

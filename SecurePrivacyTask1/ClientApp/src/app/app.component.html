@@ -1,20 +1,37 @@
 <div class="app-container">
   <header>
     <h1>{{ title }}</h1>
-    <nav>
+
+    <!-- Navigation for Authenticated Users -->
+    <nav *ngIf="authenticated$ | async; else guestLinks">
       <ul>
-        <li><a routerLink="/" routerLinkActive="active-link">List Users</a></li>
+        <li><a routerLink="/users" routerLinkActive="active-link">List Users</a></li>
         <li><a routerLink="/create" routerLinkActive="active-link">Create User</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active-link">My Profile</a></li> <!-- Profile link -->
+        <li><a routerLink="/" (click)="logout()">Logout</a></li>
+        <li><a routerLink="/cookie-management" routerLinkActive="active-link">Manage Cookies</a></li>
+        <li><a routerLink="/privacy-policy" routerLinkActive="active-link">Privacy Policy</a></li>
       </ul>
     </nav>
+
+    <!-- Navigation for Unauthenticated Users -->
+    <ng-template #guestLinks>
+      <nav>
+        <ul>
+          <li><a routerLink="/login" routerLinkActive="active-link">Login</a></li>
+          <li><a routerLink="/register" routerLinkActive="active-link">Register</a></li>
+        </ul>
+      </nav>
+    </ng-template>
   </header>
 
   <main>
     <router-outlet></router-outlet>
+    <!-- Show cookie banner only if consent has not been given -->
+    <app-cookie-banner *ngIf="!hasConsented()"></app-cookie-banner>
   </main>
 
   <footer>
     <p>&copy; 2024 User Management App - Secure Privacy</p>
   </footer>
 </div>
-

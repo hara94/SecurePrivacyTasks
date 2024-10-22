@@ -4,7 +4,7 @@ import { mergeMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
-import { loadUsers, loadUsersSuccess, createUser } from './user.actions';
+import { loadUsers, loadUsersSuccess, createUser, deleteUser } from './user.actions';
 
 
 @Injectable()
@@ -30,6 +30,18 @@ export class UserEffects {
         map((user: User) => ({ type: '[User Create] Create User Success', user })),
         catchError(() => of({ type: '[User Create] Create User Failed' }))
       ))
+    )
+  );
+
+  deleteUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteUser),
+      mergeMap(({ userId }) =>
+        this.userService.deleteUser(userId).pipe(
+          map(() => loadUsers()),  // Reload users after deletion
+          catchError(() => of({ type: '[User List] Delete User Failed' }))
+        )
+      )
     )
   );
 }
