@@ -82,8 +82,8 @@ The core of the application revolves around creating, updating, and deleting use
 ### Steps:
 
 0. Make sure you have a Mongo db instance running, available at:
-  ```bash
-  mongodb://localhost:27017
+   ```bash
+   mongodb://localhost:27017
 
 1. Clone the repository:
    ```bash
