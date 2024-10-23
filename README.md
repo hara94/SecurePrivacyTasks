@@ -86,6 +86,8 @@ The core of the application revolves around creating, updating, and deleting use
    git clone https://github.com/hara94/SecurePrivacyTasks.git
    cd SecurePrivacyTasks
 
+1.1 Simply run from Visual studio - SecurePrivacyTask1.sln or:
+
 2. Install dependencies for the Angular frontend:
    ```bash
    cd .\SecurePrivacyTask1\ClientApp\
