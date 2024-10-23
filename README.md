@@ -93,6 +93,7 @@ The core of the application revolves around creating, updating, and deleting use
   
 3. Run the backend (.NET):
    ```bash
+   cd ..\SecurePrivacyTask1\
    dotnet run
    
 4. Run the Angular frontend:
